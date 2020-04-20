@@ -1,13 +1,20 @@
 import requests
-from .endpoints import endpoints
+import json
+from endpoints import endpoints
 
 class instaBot:
     def __init__(self):
         self.session = requests.Session()
-        r = self.session.get('https://www.instagram.com/')
+        r = self.session.get(endpoints['base'])
+        self.session.headers.update({'X-CSRFToken': r.cookies['csrftoken']})
+    
+    def login(self, credentials):
+        r = self.session.post(endpoints['login'], data=credentials)
+        self.session.headers.update({'X-CSRFToken': r.cookies['csrftoken']})
+        r = json.loads(r.content.decode('utf-8')) 
+        if r['authenticated']:
+            self.user_id = r['userId']
+        return r
 
-
-session = requests.Session()
-csrf_token = session.cookies['csrftoken']
-session.headers.update({'X-CSRFToken': csrf_token})
-response = session.post('https://www.instagram.com/accounts/login/ajax/', data={'username': '_hellboybjj', 'password': 'R@f@elrrx123'})
+r = instaBot().login({'username':'_hellboybjj', 'password': 'R@f@elrrx123'})
+print(r)
