@@ -16,5 +16,5 @@ class instaBot:
             self.user_id = r['userId']
         return r
 
-r = instaBot().login({'username':'_hellboybjj', 'password': 'R@f@elrrx123'})
+r = instaBot().login({'username':'usu', 'password': 'pass'})
 print(r)
