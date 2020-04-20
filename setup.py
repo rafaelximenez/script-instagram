@@ -5,5 +5,5 @@ setup(
     version='0.0.0',
     description='',
     packages=['insta_bot'],
-    install_requires=[],
+    install_requires=['requests~=2.23'],
 )
