@@ -1,0 +1,7 @@
+setup.py
+insta_bot/__init__.py
+insta_bot.egg-info/PKG-INFO
+insta_bot.egg-info/SOURCES.txt
+insta_bot.egg-info/dependency_links.txt
+insta_bot.egg-info/requires.txt
+insta_bot.egg-info/top_level.txt

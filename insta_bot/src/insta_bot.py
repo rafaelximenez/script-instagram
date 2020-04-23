@@ -80,8 +80,10 @@ class instaBot:
 r = instaBot()
 r.login(credentials)
 #print(r.get_userid('bjj'))
-r.get_media_id_by_tag('bjj')
-r.like_all_exist_media()
+tags = ['bjj', 'bjjlifestyle', 'jiujitsu', 'jiujitsulifestyle']
+for tag in tags:
+    r.get_media_id_by_tag(tag)
+    r.like_all_exist_media()
 
 
 
